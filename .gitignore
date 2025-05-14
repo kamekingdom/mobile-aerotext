@@ -1,0 +1,14 @@
+# imagesフォルダは無視
+images/
+jp.txt
+
+# modelフォルダ以下は全て無視…
+model/**
+
+# ただし weightsフォルダ内は含める（例外）
+!model/weights/
+!model/weights/**
+
+# model直下にファイルがある場合、それらも無視する（明示的）
+model/*
+!model/weights/
