@@ -36,19 +36,11 @@ mobile-aerotext/
 └── .gitignore
 ```
 
-## Notes
-
-- The `images/` folder is excluded from Git tracking via `.gitignore`.
-- All contents under `model/` are ignored **except** for `model/weights/`.
-- The weight files are provided to facilitate inference and reproducibility.
-
 ## Development Environment
 
 - Python ≥ 3.8
 - PyTorch / TensorFlow (depending on the model implementation)
 - NumPy / OpenCV / Matplotlib (for preprocessing and visualization)
-
-A `requirements.txt` or `environment.yml` will be provided (or should be added) to specify dependencies.
 
 ## License & Usage
 
