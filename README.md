@@ -1,6 +1,7 @@
 # mobile-aerotext
 
 **mobile-aerotext** is a lightweight character recognition and transformation project using a dataset of handwritten Hiragana character images (256x256 pixels, 1000 images).
+[![Watch the demo](https://img.youtube.com/vi/zxwabglNMT0/0.jpg)](https://youtu.be/zxwabglNMT0)
 
 ## Dataset
 
