@@ -219,8 +219,8 @@ def calculate_accuracy(model: YOLO,
     cm = confusion_matrix(y_true, y_pred, labels=ulabels)
     plot_confusion_matrix_and_labels(cm,
                                      labels=ulabels,
-                                     cm_path="confusion_matrix.png",
-                                     label_path="labels_table.png")
+                                     cm_path="./confusion_matrix.png",
+                                     label_path="./labels_table.png")
     print(classification_report(y_true, y_pred, labels=ulabels,
                                 zero_division=0))
 
@@ -270,7 +270,7 @@ def main() -> None:
         'ya','yu','yo','ra','ri',
         'ru','re','ro','wa','wo','n'
     ]
-    acc = calculate_accuracy(model, "./test_images/", class_names)
+    acc = calculate_accuracy(model, "test_images/", class_names)
     print(f"\n--- 最終 Accuracy: {acc:.4%} ---")
 
 if __name__ == "__main__":
