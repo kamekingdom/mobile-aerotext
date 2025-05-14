@@ -219,8 +219,8 @@ def calculate_accuracy(model: YOLO,
     cm = confusion_matrix(y_true, y_pred, labels=ulabels)
     plot_confusion_matrix_and_labels(cm,
                                      labels=ulabels,
-                                     cm_path="./confusion_matrix.png",
-                                     label_path="./labels_table.png")
+                                     cm_path="./result/confusion_matrix.png",
+                                     label_path="./result/labels_table.png")
     print(classification_report(y_true, y_pred, labels=ulabels,
                                 zero_division=0))
 
