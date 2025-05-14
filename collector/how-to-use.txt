@@ -1,0 +1,41 @@
+The system workflow proceeds as follows:
+
+1. Environment Setup:
+-- The user first executes env.bat to create a virtual environment (myenv) and install the required dependencies specified in scripts/requirements.txt.
+
+2. Data Collection:
+-- Upon running run.bat, the main program (scripts/main.py) is executed. This initiates the data collection process.
+
+3. Data Storage:
+-- Video Files: Collected video data are stored under the data/ directory, organized by user (e.g., data/user_01/X.mp4, etc.).
+-- Database: Metadata or structured data associated with the recordings are stored in gestude_data.db.
+
+4. Data Preview:
+-- The user can execute preview.bat to run scripts/db-preview.py, which allows for visual inspection or validation of the accumulated data within the database.
+
+[[Directory Structure]]
+
+collector/
+│
+├── data/
+│   ├── user_01/
+│   │   ├── X.mp4
+│   │   ├── Y.mp4
+│   │   └── ...
+│   │
+│   ├── user_02/
+│   │   ├── X.mp4
+│   │   ├── Y.mp4
+│   │   └── ...
+│   └── ...
+│
+├── scripts/
+│   ├── requirements.txt   // For setting up the environment
+│   ├── main.py            // Main program
+│   ├── db-preview.py      // For previewing the database
+│   └── combination.py     // For generating specified string combinations
+│
+├── env.bat               // Creates "myenv" and sets up the environment (Windows)
+├── run.bat               // Executes the program (Windows)
+├── preview.bat           // Previews the database (Windows)
+└── gestude_data.db       // Database file
