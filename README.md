@@ -2,18 +2,27 @@
 
 **mobile-aerotext** is a lightweight character recognition and transformation project using a dataset of handwritten Hiragana character images (256x256 pixels, 1000 images).
 
-## 🔗 Dataset
+## Dataset
 
-The Hiragana Train Dataset (256x256, 1000 images) is available via the following link:
+The Hiragana Train Dataset (256x256, 46000 images) is available via the following link:
 
 [Google Drive Link](https://drive.google.com/file/d/1oKIFJD2T-bTw3Y_d1SU3SvIjHKCjCq6v/view?usp=drive_link)
 
 - Format: PNG
 - Size: 256x256 pixels
-- Number of images: 1000
+- Number of images: 46000
 - Content: Pre-processed handwritten-style Hiragana character images
 
-## 📁 Directory Structure (Partial)
+The Hiragana Train Dataset (256x256, 1000 images) is available via the following link:
+
+[Google Drive Link](https://drive.google.com/file/d/1A-qv_GlGpE46OKY9vRzmBpvBK3dWHcFS/view?usp=drive_link)
+
+- Format: PNG
+- Size: 256x256 pixels
+- Number of images: 1600
+- Content: Pre-processed handwritten-style Hiragana character images
+
+## Directory Structure (Partial)
 
 ```
 mobile-aerotext/
@@ -25,13 +34,13 @@ mobile-aerotext/
 └── .gitignore
 ```
 
-## 🚫 Notes
+## Notes
 
 - The `images/` folder is excluded from Git tracking via `.gitignore`.
 - All contents under `model/` are ignored **except** for `model/weights/`.
 - The weight files are provided to facilitate inference and reproducibility.
 
-## 🛠 Development Environment
+## Development Environment
 
 - Python ≥ 3.8
 - PyTorch / TensorFlow (depending on the model implementation)
@@ -39,7 +48,7 @@ mobile-aerotext/
 
 A `requirements.txt` or `environment.yml` will be provided (or should be added) to specify dependencies.
 
-## 📄 License & Usage
+## License & Usage
 
 The dataset and code are intended for academic use only. For commercial applications, please contact the project maintainer.
 

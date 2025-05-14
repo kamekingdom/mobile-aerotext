@@ -270,7 +270,7 @@ def main() -> None:
         'ya','yu','yo','ra','ri',
         'ru','re','ro','wa','wo','n'
     ]
-    acc = calculate_accuracy(model, "./images/", class_names)
+    acc = calculate_accuracy(model, "./test_images/", class_names)
     print(f"\n--- 最終 Accuracy: {acc:.4%} ---")
 
 if __name__ == "__main__":
