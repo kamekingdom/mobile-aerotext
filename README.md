@@ -30,7 +30,7 @@ mobile-aerotext/
 │   └── infer.py        # Inference Program
 ├── model/
 │   └── weights/        # Model weights (included in version control)
-├── test_images/        # Training/auxiliary images (excluded from version control)
+├── test_images/        # Test images (excluded from version control)
 ├── scripts/            # Scripts for processing and training (optional)
 ├── README.md
 └── .gitignore
