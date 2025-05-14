@@ -28,7 +28,7 @@ The Hiragana Train Dataset (256x256, 1000 images) is available via the following
 mobile-aerotext/
 ├── model/
 │   └── weights/        # Model weights (included in version control)
-├── images/             # Training/auxiliary images (excluded from version control)
+├── test_images/        # Test images (excluded from version control)
 ├── scripts/            # Scripts for processing and training (optional)
 ├── README.md
 └── .gitignore
