@@ -1,5 +1,6 @@
 # imagesフォルダは無視
 test_images/
+doc/
 jp.txt
 
 # modelフォルダ以下は全て無視…
