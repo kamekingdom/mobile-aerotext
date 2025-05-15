@@ -1,6 +1,8 @@
 # mobile-aerotext
 
 **mobile-aerotext** is a lightweight character recognition and transformation project using a dataset of handwritten Hiragana character images (256x256 pixels, 1000 images).
+
+**Demo Video**
 [![Watch on YouTube](https://img.youtube.com/vi/zxwabglNMT0/0.jpg)](https://youtu.be/zxwabglNMT0?si=ltFUmZbv-KYWacYm)
 
 ## Dataset
@@ -31,7 +33,7 @@ mobile-aerotext/
 │   ├── how-to-use.txt  # Instruction and Description
 │   └── run.bat         # Data Collection Program
 ├── train/
-│   └── train.py        # Training Program
+│   └── train.py        # Model Training Program
 ├── model/
 │   └── weights/best.pt # Best Model weights (included in version control)
 ├── infer/
@@ -50,7 +52,7 @@ mobile-aerotext/
 
 ## License & Usage
 
-- _CC BY 4.0 license_: The dataset and code are intended for academic use only. For commercial applications, please contact the project maintainer.
+- **CC BY 4.0 license**: The dataset and code are intended for academic use only. For commercial applications, please contact the project maintainer.
 
 ---
 
