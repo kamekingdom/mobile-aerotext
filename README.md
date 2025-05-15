@@ -30,10 +30,10 @@ mobile-aerotext/
 ├── collector/
 │   ├── how-to-use.txt  # Instruction and Description
 │   └── run.bat         # Data Collection Program
-├── model/
-│   └── weights/best.pt # Best Model weights (included in version control)
 ├── train/
 │   └── train.py        # Training Program
+├── model/
+│   └── weights/best.pt # Best Model weights (included in version control)
 ├── infer/
 │   ├── result          # Inference Result Data
 │   └── infer.py        # Inference Test Program
