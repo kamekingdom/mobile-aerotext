@@ -37,7 +37,7 @@ mobile-aerotext/
 ├── infer/
 │   ├── result          # Inference Result Data
 │   └── infer.py        # Inference Test Program
-├── test_images/        # Test images for Inference (excluded from version control)
+├── test_images/        # Test images for Inference (download from link mentioned above)
 ├── scripts/            # Scripts for processing and training (optional)
 ├── README.md
 └── .gitignore
