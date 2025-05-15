@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Hiragana-YOLO evaluator
+Hiragana evaluator
   - CER, WER
   - latency (ms), per-phase speed, CPU usage (%)
   - confusion matrix + label table (PNG)
