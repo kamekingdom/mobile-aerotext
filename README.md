@@ -27,11 +27,17 @@ The Hiragana Train Dataset (256x256, 1600 images) is available via the following
 
 ```
 mobile-aerotext/
-├── infer/
-│   └── infer.py        # Inference Program
+├── collector/
+│   ├── how-to-use.txt  # Instruction and Description
+│   └── run.bat         # Data Collection Program
 ├── model/
-│   └── weights/        # Model weights (included in version control)
-├── test_images/        # Test images (excluded from version control)
+│   └── weights/best.pt # Best Model weights (included in version control)
+├── train/
+│   └── train.py        # Training Program
+├── infer/
+│   ├── result          # Inference Result Data
+│   └── infer.py        # Inference Test Program
+├── test_images/        # Test images for Inference (excluded from version control)
 ├── scripts/            # Scripts for processing and training (optional)
 ├── README.md
 └── .gitignore
