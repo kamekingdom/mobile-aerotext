@@ -1,5 +1,6 @@
 # imagesフォルダは無視
 test_images/
+infer/result/
 doc/
 jp.txt
 

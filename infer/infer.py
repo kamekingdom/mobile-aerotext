@@ -5,12 +5,14 @@ Hiragana evaluator
   - CER, WER
   - latency (ms), per-phase speed, CPU usage (%)
   - confusion matrix + label table (PNG)
-2025-05-14
+  - **mis-detections are written to ./result/misclassified.txt**   ← new
+2025-05-16
 """
 
 import os, re, time, shutil, statistics
 from pathlib import Path
 from typing import List, Tuple
+from datetime import datetime              # ← new
 
 import numpy as np
 import cv2
@@ -18,7 +20,7 @@ import torch
 from ultralytics import YOLO
 from sklearn.metrics import confusion_matrix, classification_report
 import matplotlib.pyplot as plt
-import japanize_matplotlib      # 日本語フォント
+import japanize_matplotlib                 # 日本語フォント
 import pandas as pd
 
 try:
@@ -74,7 +76,6 @@ def load_model(model_path: str) -> YOLO:
 
 def perform_inference(model: YOLO, image_path: str) -> Tuple[np.ndarray, list]:
     """推論を実行し速度統計を記録して戻す"""
-    # 対象プロセス
     proc = psutil.Process(os.getpid())
     proc.cpu_percent(interval=None)              # baseline
 
@@ -159,6 +160,7 @@ def calculate_accuracy(model: YOLO,
         if f.is_dir():
             continue
         ext = f.suffix.lower()
+
         # JPG → PNG に統一
         if ext == ".jpg":
             img = cv2.imread(str(f))
@@ -183,10 +185,7 @@ def calculate_accuracy(model: YOLO,
         _, results = perform_inference(model, str(image_path))
 
         # 推論結果をまとめて標準化
-        pred_labels = []
-        for res in results:
-            for box in res.boxes:
-                pred_labels.append(class_names[int(box.cls[0])])
+        pred_labels = [class_names[int(box.cls[0])] for res in results for box in res.boxes]
         pred_raw = '_'.join(pred_labels)
 
         truth = normalize_label(truth_raw)
@@ -198,16 +197,28 @@ def calculate_accuracy(model: YOLO,
         if truth == pred:
             correct += 1
         else:
-            y_miss.append(f"{truth_raw} → {pred_raw}")
+            # ファイル名 + 生ラベル → TSV 形式で保管
+            y_miss.append(f"{f.name}\t{truth_raw}\t{pred_raw}")
 
         total += 1
 
-    # --------------- 統計計算 ---------------- #
+    # --------------- 精度指標 ---------------- #
     accuracy = correct / total if total else 0.0
     cer = calculate_cer(y_true, y_pred)
     wer = calculate_wer(y_true, y_pred)
 
-    # 表示
+    # 誤検出を書き出し ----------------------- #
+    result_dir = Path("./result")
+    result_dir.mkdir(parents=True, exist_ok=True)
+    mis_path = result_dir / "misclassified.txt"
+    with mis_path.open("w", encoding="utf-8") as wf:
+        ts = datetime.now().isoformat(timespec="seconds")
+        wf.write(f"# Mis-detections generated at {ts}\n")
+        wf.write("# filename\ttruth\tpredicted\n")
+        wf.write("\n".join(y_miss))
+    print(f"誤検出一覧を保存しました: {mis_path}")
+
+    # 表示 ---------------------------------- #
     print(f"\n==== 精度指標 ====")
     print(f" Accuracy          : {accuracy:.4%}")
     print(f" CER               : {cer:.4%}")
@@ -219,8 +230,8 @@ def calculate_accuracy(model: YOLO,
     cm = confusion_matrix(y_true, y_pred, labels=ulabels)
     plot_confusion_matrix_and_labels(cm,
                                      labels=ulabels,
-                                     cm_path="./result/confusion_matrix.png",
-                                     label_path="./result/labels_table.png")
+                                     cm_path=result_dir / "confusion_matrix.png",
+                                     label_path=result_dir / "labels_table.png")
     print(classification_report(y_true, y_pred, labels=ulabels,
                                 zero_division=0))
 
@@ -229,21 +240,16 @@ def calculate_accuracy(model: YOLO,
         if not arr:
             print(f"{name}: N/A")
             return
-
-        # NaN を除去（speed キーが欠落したケース対策）
         arr_clean = [x for x in arr if not np.isnan(x)]
         if not arr_clean:
             print(f"{name}: N/A")
             return
-
         mean   = statistics.mean(arr_clean)
         sd     = statistics.stdev(arr_clean) if len(arr_clean) > 1 else 0.0
         median = statistics.median(arr_clean)
         p95    = np.percentile(arr_clean, 95)
-
         print(f"{name}: mean={mean:.2f}  sd={sd:.2f}  "
-            f"median={median:.2f}  p95={p95:.2f}")
-
+              f"median={median:.2f}  p95={p95:.2f}")
 
     print("\n==== レイテンシ / システム負荷 ====")
     _summary(preprocess_times,  "Preprocess (ms)")
