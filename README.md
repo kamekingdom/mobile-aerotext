@@ -45,8 +45,7 @@ mobile-aerotext/
 
 ## License & Usage
 
-- CC BY 4.0 license
-  The dataset and code are intended for academic use only. For commercial applications, please contact the project maintainer.
+- _CC BY 4.0 license_: The dataset and code are intended for academic use only. For commercial applications, please contact the project maintainer.
 
 ---
 
