@@ -6,7 +6,7 @@ REM 仮想環境を有効化
 call myenv\Scripts\activate
 
 REM main.pyを実行
-python scripts\main.py
+python scripts\test.py
 
 REM 実行終了後、仮想環境を無効化
 deactivate

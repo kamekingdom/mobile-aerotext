@@ -8,7 +8,7 @@ import tkinter as tk
 import tkinter.font as tkFont
 import ttkbootstrap as tb
 from ttkbootstrap.constants import *
-from combination import combinations_romaji_result  # 軌跡リストの組み合わせ（ローマ字対応）
+from test_comb import combinations_romaji_result # 軌跡リストの組み合わせ（ローマ字対応）
 import keyboard  # キーボード操作用
 import math
 import sqlite3
@@ -580,7 +580,7 @@ def record_trajectory(user_name, selected_romaji):
     hands.close()
 
     # セグメンテーションを実行
-    # split_indices, trajectory_data = segment_trajectory(trajectory_data, split_indices, selected_romaji)
+    split_indices, trajectory_data = segment_trajectory(trajectory_data, split_indices, selected_romaji)
 
     # データをデータベースに保存
     save_trajectory_to_db(db_path, table_name, selected_romaji, user_name, trajectory_data, split_indices)
