@@ -9,6 +9,8 @@ model/**
 collector/bbx/
 collector/composed/
 collector/data/
+collector/datasets/
+collector/runs_aerotext/
 collector/myenv/
 
 

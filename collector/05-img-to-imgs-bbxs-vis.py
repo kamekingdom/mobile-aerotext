@@ -28,7 +28,7 @@ BBX_IN_DIR:  Path = Path("bbx")            # ラベル: bbx/<class>/<stem>.txt�
 OUT_DIR:     Path = Path("composed")
 
 K_COMPOSE: int = 3                         # 1 枚に貼る個数
-N_SAMPLES: int = 100
+N_SAMPLES: int = 10000
 CANVAS_H: int = 256
 CANVAS_W: int = 256
 
