@@ -21,3 +21,5 @@ collector/myenv/
 # model直下にファイルがある場合、それらも無視する（明示的）
 model/*
 !model/weights/
+
+paper/
