@@ -19,10 +19,10 @@ The Hiragana Train Dataset (256x256, 46000 images) is available via the followin
 
 The Hiragana Train Dataset (256x256, 1600 images) is available via the following link:
 
-[test_images Google Drive Link](https://drive.google.com/file/d/1A-qv_GlGpE46OKY9vRzmBpvBK3dWHcFS/view?usp=drive_link)
+[test_images Google Drive Link](https://drive.google.com/file/d/1A-qv_GlGpE46OKY9vRzmBpvBK3dWHcFS/view?usp=sharing)
 
 - Format: PNG
-- Size: 256x256 pixels
+- Size: 640x640 pixels
 - Number of images: 1600
 - Content: Pre-processed handwritten-style Hiragana character images
 
