@@ -23,3 +23,5 @@ model/*
 !model/weights/
 
 paper/
+
+infer/images
