@@ -25,3 +25,5 @@ model/*
 paper/
 
 infer/images
+
+collector/scripts/*.py
