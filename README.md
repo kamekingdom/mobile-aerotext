@@ -4,7 +4,7 @@
 
 ## Demonstration Video
 
-[![Watch on YouTube](https://img.youtube.com/vi/zxwabglNMT0/0.jpg)](https://youtu.be/zxwabglNMT0?si=ltFUmZbv-KYWacYm)
+[![Watch on YouTube](https://youtu.be/3FdAH0zGEVM/0.jpg)](https://youtu.be/3FdAH0zGEVM)
 
 ## Dataset
 
