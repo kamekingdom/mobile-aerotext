@@ -4,13 +4,13 @@
 
 ## Demonstration Video
 
-[![Watch on YouTube](https://img.youtube.com/vi/zxwabglNMT0/0.jpg)](https://youtu.be/zxwabglNMT0?si=ltFUmZbv-KYWacYm)
+[![Watch the video](https://img.youtube.com/vi/3FdAH0zGEVM/0.jpg)](https://www.youtube.com/watch?v=3FdAH0zGEVM)
 
 ## Dataset
 
 The Hiragana Train Dataset (256x256, 46000 images) is available via the following link:
 
-[train_images Google Drive Link](https://drive.google.com/file/d/1oKIFJD2T-bTw3Y_d1SU3SvIjHKCjCq6v/view?usp=drive_link)
+[train_images Google Drive Link](https://drive.google.com/file/d/1oKIFJD2T-bTw3Y_d1SU3SvIjHKCjCq6v/view?usp=sharing)
 
 - Format: PNG
 - Size: 256x256 pixels
@@ -19,10 +19,10 @@ The Hiragana Train Dataset (256x256, 46000 images) is available via the followin
 
 The Hiragana Train Dataset (256x256, 1600 images) is available via the following link:
 
-[test_images Google Drive Link](https://drive.google.com/file/d/1A-qv_GlGpE46OKY9vRzmBpvBK3dWHcFS/view?usp=drive_link)
+[test_images Google Drive Link](https://drive.google.com/file/d/1A-qv_GlGpE46OKY9vRzmBpvBK3dWHcFS/view?usp=sharing)
 
 - Format: PNG
-- Size: 256x256 pixels
+- Size: 640x640 pixels
 - Number of images: 1600
 - Content: Pre-processed handwritten-style Hiragana character images
 
